@@ -1,0 +1,15 @@
+---
+- name: setup roles and packages
+  hosts: all
+  become: true
+  vars:
+    docker_users:
+      - panda
+      - vagrant
+  roles:
+      - user
+      - package
+      - geerlingguy.docker
+      - christiangda.awscli
+      - christiangda.awscli_configure
+      - diodonfrost.terraform
