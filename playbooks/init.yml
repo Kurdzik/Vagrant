@@ -8,7 +8,7 @@
       - vagrant
   roles:
     - user
-    - packages
+    - package
     - geerlingguy.docker
     - christiangda.awscli
     - christiangda.awscli_configure
