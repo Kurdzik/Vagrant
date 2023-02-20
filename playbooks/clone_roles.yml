@@ -1,3 +1,4 @@
+---
 - name: clone roles
   hosts: all
   become: true
@@ -8,6 +9,7 @@
     - name: create directory
       file:
         path: /etc/ansible/roles
+        state: directory
         mode: '0755'
     - name: git checkout
       git:
