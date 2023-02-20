@@ -16,9 +16,6 @@ Vagrant.configure("2") do |config|
     }
   end
     
-
-  
-  
   config.vm.network "private_network", ip: "192.168.44.44"
   
   config.vm.provision "ansible_local" do |ansible|
@@ -27,4 +24,6 @@ Vagrant.configure("2") do |config|
       ansible.galaxy_command = "sudo ansible-galaxy install --role-file=%{role_file} --roles-path=%{roles_path}"
       ansible.playbook = "playbooks/init.yml"
   end
+  if VAGRANT_COMMAND == "ssh"
+    config.ssh.username = 'panda'
 end
